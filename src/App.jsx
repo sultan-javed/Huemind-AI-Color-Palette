@@ -11,7 +11,7 @@ const App = () => {
     setloading(true);
 
     try {
-      // now calling your own API route, no API key here
+      
       const response = await axios.post("/api/colors", {
         model: "openrouter/auto",
         messages: [
@@ -20,9 +20,10 @@ const App = () => {
             content: `Give me five hex colors for the color, mood or object: ${prompt}`,
           },
         ],
+        max_tokens: 500
       });
 
-      // response from your serverless function
+      // response 
       const result = response.data.choices[0].message.content;
       const hexmatches = result.match(/#[0-9a-fA-F]{6}/g);
 

@@ -7,9 +7,18 @@ export default async function handler(req, res) {
   }
 
   try {
+    // take body from frontend
+    const body = req.body;
+
+    // enforce safe defaults
+    const requestData = {
+      ...body,
+      max_tokens: body.max_tokens || 500, 
+    };
+
     const response = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
-      req.body,
+      requestData,
       {
         headers: {
           Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
