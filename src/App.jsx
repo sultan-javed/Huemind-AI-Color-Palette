@@ -13,7 +13,7 @@ const App = () => {
     try {
       // now calling your own API route, no API key here
       const response = await axios.post("/api/colors", {
-        model: "openai/gpt-3.5-turbo",
+        model: "openrouter/auto",
         messages: [
           {
             role: "user",
