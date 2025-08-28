@@ -57,14 +57,9 @@ const App = () => {
       {colors.length > 0 && (
         <div className="flex flex-wrap gap-6 mt-16 mb-6 p-6 sm:p-10 md:p-16 lg:p-20 justify-center">
           {colors.map((color, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center w-24 sm:w-28 md:w-32 group"
-            >
-              <div
-                className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded transition-transform duration-300 group-hover:scale-130"
-                style={{ backgroundColor: color }}
-              ></div>
+            <div key={index} className="flex flex-col items-center w-24 sm:w-28 md:w-32 group">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded transition-transform duration-300 group-hover:scale-130"
+                style={{ backgroundColor: color }}></div>
               <span className="mt-3 text-sm sm:text-base">{color}</span>
             </div>
           ))}
